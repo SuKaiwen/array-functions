@@ -14,13 +14,52 @@ numbers.forEach((item, index, arr) => {
 
 // Example: adding sum
 let sum = 0;
-
 numbers.forEach((item) => {
   sum += item;
 })
-
-// 55
 console.log(sum);
+
+
+// Example: counting items
+const items = ['bag', 'bag', 'shoe', 'mouse', 'bag', 'shoe'];
+let count = {}
+
+// For each item in item array
+// If the item exists in the count array (count[item])
+// Them increase count
+// Else initialise it
+items.forEach(item => {
+  if(count[item]){
+    count[item]++;
+  }else{
+    count[item] = 1;
+  }
+})
+
+// Map
+const products = [
+  {
+    name:"laptop",
+    price: 1000,
+    count: 5
+  },
+  {
+    name:"desktop",
+    price: 1500,
+    count: 2
+  },
+  {
+    name:"phone",
+    price: 500,
+    count: 10
+  }
+];
+
+const total = products.map(item => ({
+  name: item.name,
+  total: item.price * item.count
+}));
+console.log(total);
 
 function App() {
 
