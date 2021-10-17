@@ -400,6 +400,65 @@ shiftNum.shift();
 // becomes 1,2,3
 console.log(shiftNum);
 
+// IndexOf
+// returns first index of given element (doesnt care bout dupes)
+const namesIndex = ['kevin', 'ivan', 'patrick', 'liam', 'ivan'];
+console.log(namesIndex.indexOf('ivan'));
+// IF NOT THERE the function will return -1
+
+// lastIndexOf
+// same as IndexOf but starts at end of array
+console.log(namesIndex.lastIndexOf('ivan'));
+
+// ARRAY every
+// we can use this to check a function against every object
+// returns true if ALL satisfy condition else false.
+const everyNum = [1,2,3,4,5];
+
+const everyNumBool = everyNum.every(isPositive);
+
+function isPositive(item){
+  return item > 0;
+}
+
+// Example 2:
+// Check if every object in this array contains the field "name"
+const everyPerson = [
+  {
+    name:'kev'
+  },
+  {
+    name:'pepe'
+  },
+  {
+    name:'lololol'
+  },
+  {
+    age: 20
+  }
+];
+
+const everyPeople = everyPerson.every(person => person.name !== undefined);
+
+console.log(everyPeople);
+
+// ARRAY some
+// executes function on elements of the array
+// returns true if AT LEAST one element returns true
+const someNums = [1,2,3,4,5,6,7,8];
+
+const sumRes = someNums.some(checkGreater);
+
+function checkGreater(item){
+  return item > 4;
+}
+
+console.log(sumRes);
+
+
+
+
+
 function App() {
 
   return (
