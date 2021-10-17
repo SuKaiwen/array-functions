@@ -192,6 +192,54 @@ const totalBookVal = products2.reduce((acc, item) => acc + (item.value)
 
 console.log(totalBookVal);
 
+// Array slice
+// Shallow copy of portion of array
+// WILL NOT MODIFY ORIGINAL ARRAY
+const sliceNums = [1,2,3,4,5,6,7];
+
+// We get a sub array of sliceNums from starting
+// from index 1 and ending at index 4
+// Index provided at end is NOT included
+// AKA: 2, 3, 4
+const newNums = sliceNums.slice(1, 4);
+
+// We can also call negative index
+// Example this will get the LAST 3 numbers
+const newNums2 = sliceNums.slice(-3);
+
+// This will get all numbers STARTING from index 1
+const newNums3 = sliceNums.slice(1);
+
+console.log(newNums);
+console.log(newNums2);
+console.log(newNums3);
+
+// Array Splice
+// Changes an array by removing or replace elements
+// Needs starting index, how many items we want to remove, new items
+const spliceNums = [1,2,3,4,5,6,7,8,9,10]
+
+// Example 1
+// This will remove 3 ITEMS starting at INDEX 2
+// so this will delete index 2, 3, 4
+// newSplice = 3,4,5
+// spliceNums = 1,2,6,7,8,9
+const newSplice = spliceNums.splice(2, 3);
+console.log(spliceNums);
+console.log(newSplice);
+
+// Example 2
+// NOW we remove 3 items starting from 2
+// AND INSERT 99 and 100 STARTING AT INDEX 2
+const newSplice2 = spliceNums.splice(2,3,99,100);
+console.log(spliceNums);
+
+// Example 3
+// If we just want to insert we make the
+// how many items we want to remove 0
+// In this example we just add 101, 102 starting at index 2
+const newSplice3 = spliceNums.splice(2,0, 101, 102);
+console.log(spliceNums);
 
 
 function App() {
