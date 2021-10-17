@@ -358,6 +358,47 @@ const stringTest = 'PEPE PEPE LOOOOOL';
 const reverseStr = stringTest.split('').reverse().join('');
 console.log(reverseStr);
 
+// ARRAY push
+// Add one or more elements at end of array and returns length
+const pushNums = [1,2,3];
+pushNums.push(4);
+
+// Will be 1,2,3,4
+console.log(pushNums);
+
+// We can push multiple members
+// 1,2,3,4,5,6,7
+pushNums.push(5,6,7);
+console.log(pushNums);
+
+// push returns total length so we can assign it and see it here
+const totalPush = pushNums.push(8);
+console.log(totalPush);
+
+// ARRAY pop
+// removes items from an array
+// pop() removes the last element and returns it 
+
+const popNums = [1,2,3,4,5];
+popNums.pop();
+
+// 1,2,3,4
+console.log(popNums);
+
+// ARRAY unshift
+// ADD nums at beginning of array and returns new length
+const unshiftNum = [1,2,3,4];
+unshiftNum.unshift(0);
+// Will be 0,1,2,3,4
+console.log(unshiftNum);
+// We can have multiple paramters e.g. unshiftNum.unshift(0,1,2,3,4);
+
+// ARRAY shift
+// removes first element of array and returns it
+const shiftNum = [0,1,2,3];
+shiftNum.shift();
+// becomes 1,2,3
+console.log(shiftNum);
 
 function App() {
 
