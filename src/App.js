@@ -455,6 +455,40 @@ function checkGreater(item){
 
 console.log(sumRes);
 
+// ARRAY find
+// searches array and returns first element which
+// callback function returns true
+// If not found, it returns undefined
+const findNames = ['kevin','ivan','patrick'];
+
+const findRes = findNames.find(findName);
+
+function findName(item){
+  return item === 'ivan';
+}
+
+console.log(findRes);
+
+// Example 2: object find
+const findObjects = [
+  {
+    name:'kev',
+    age: 20
+  },
+  {
+    name:'ivan',
+    age: 25
+  }
+]
+
+function findName2(item){
+  return item.name === 'ivan';
+}
+
+// Returns object of {name: 'ivan', age: 25}
+const findObjectRes = findObjects.find(findName2);
+console.log(findObjectRes);
+
 
 
 
