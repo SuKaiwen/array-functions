@@ -241,6 +241,44 @@ console.log(spliceNums);
 const newSplice3 = spliceNums.splice(2,0, 101, 102);
 console.log(spliceNums);
 
+// SORT
+// sorts an array by comparing values
+// SORT WILL MODIFY ORIGINAL ARRAY
+const names = ['Peter', 'John', 'Michael', 'Matthew'];
+names.sort();
+console.log(names);
+
+// NOTE: sort will convert elements to strings
+// If we sort to numbers we get "alphabetical order" of string
+// e.g. 10, 105, 20, 23
+// To fix: we can produce a comparison funciton
+const sortNum = [12,50,25,36,90,55];
+
+function compare(a,b){
+  return a-b;
+}
+console.log(sortNum.sort(compare));
+
+// SORT also works on array of objects
+const sortProducts = [
+  {
+    name:"laptop",
+    price: 999
+  },
+  {
+    name:"lamp",
+    price: 50
+  },
+  {
+    name:"pepes",
+    price: 99999
+  }
+]
+
+// NOTE: defualt sort is in ascending order
+// For descending order: b.price - a.price
+console.log(sortProducts.sort((a,b) =>  a.price - b.price));
+
 
 function App() {
 
