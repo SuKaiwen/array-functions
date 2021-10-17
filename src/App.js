@@ -117,12 +117,80 @@ console.log(oldPeople);
 // Example 3: remove duplicates
 const dupeNums = [1,2,6,3,5,2,4,2,5,3,64,1,2,5]
 
+// How it works:
+// indexOf function returns first instance in the array with
+// that specific value
+// If we find a dupe value down the line this means that
+// the index of the dupe value is NOT the first instance, thus
+// it is a dupe
 const nonDupe = dupeNums.filter((value, index, arr) => {
   return arr.indexOf(value) === index;
 })
 
 console.log(nonDupe);
 
+// Array reduce
+// Executes function of all elements in the array and returns one
+// single value.
+const reduceNums = [1,2,3,4,5]
+
+// Example 1: getting total value
+// This function takes in a callback funciton and total
+// numbers.reduce(callnack, initial)
+// If you dont provide initial number then the initial will be index 0 of arr
+const totalNums = reduceNums.reduce(sumReduce, 0);
+
+// Initially accumulator will be 0 and we keep adding numbers
+function sumReduce(accumulator, value){
+  return accumulator + value;
+}
+
+console.log(totalNums);
+
+// Example 2: getting max value
+const max = reduceNums.reduce(getMax);
+
+// For every item in the array
+// We compare the current item value to the accumulator
+// Since no initial stated, the accumulator is item at index 0
+// If compared number is higher than accumulator then we need 
+// to compare that to the next numbers...
+function getMax(accumulator, value){
+  if(accumulator > value){
+    return accumulator;
+  }else{
+    return value;
+  }
+}
+console.log(max);
+
+// Example 3: 
+const products2 = [
+  {
+    name:"book1",
+    value: 1000,
+    count: 3
+  },
+  {
+    name:"book2",
+    value:1500,
+    count:10
+  },
+  {
+    name:"book3",
+    value:500,
+    count:25
+  }
+];
+
+// For every item in the product list
+// Initial acc (sum) is 0
+// We add the item value times item count to the acc
+// In the end we get the sum of all value and count of each item
+const totalBookVal = products2.reduce((acc, item) => acc + (item.value)
+* item.count, 0);
+
+console.log(totalBookVal);
 
 
 
