@@ -317,6 +317,48 @@ console.log(fillNums.fill(1,1,4));
 // Example filling array with array index
 console.log(Array(5).fill(0).map((_, index) => index+1));
 
+
+// ARRAY Includes
+// Find if an element is included
+const includeNames = ['Kevin', 'Ivan', 'Smith'];
+
+// True
+const includedName = names.includes('Ivan');
+// False
+const includeName_False = names.includes('Patrick');
+
+// ARRAY Join
+// creates new string from array by concating all elements
+// uses , as separator but you can specify
+const country = ['USA', 'NZ', 'AUS'];
+const joined = country.join();
+// WILL be USA,NZ,AUS
+console.log(joined);
+
+// we can specify separator
+// WILL be USA - NZ - AUS
+const joined2 = country.join(' - ');
+console.log(joined2);
+
+// ARRAY reverse
+// reverse an array
+// WILL MODIFY ORIGINAL ARRAY
+const reverseNums = [1,2,3,4,5]
+
+// [5,4,3,2,1]
+console.log(reverseNums.reverse());
+
+// IF we don't want to change the original array
+// We can also do [...reverseNums].reverse()
+const reverse2 = reverseNums.concat().reverse();
+console.log(reverse2);
+
+// ALso works on string
+const stringTest = 'PEPE PEPE LOOOOOL';
+const reverseStr = stringTest.split('').reverse().join('');
+console.log(reverseStr);
+
+
 function App() {
 
   return (
