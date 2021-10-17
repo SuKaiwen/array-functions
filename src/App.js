@@ -489,9 +489,69 @@ function findName2(item){
 const findObjectRes = findObjects.find(findName2);
 console.log(findObjectRes);
 
+// ARRAY findIndex
+// returns the index of the element
+const findIndexNum = [1,2,3,4,5,6]
 
+function findThree(value){
+  return value === 3;
+}
 
+const resultFindIndex = findIndexNum.findIndex(findThree);
 
+// Returns 3 as a[2] is 3
+console.log(resultFindIndex);
+
+// ARRAY from
+// makes shallow copy of array from object or iterable
+const stringNum = '12345678';
+
+// convert to [1,2,3,4,5,6,7]
+
+// Result of this is ['1','2', ...]
+const res = Array.from(stringNum, mapFn);
+
+// To cenvert to numbers
+// Or use Array.from(str, x => Number(x));
+function mapFn(x){
+  return Number(x);
+}
+
+// Easy way to remove duplicates
+const fromNums = [1,2,3,5,2,3,6,8,3,5,2,1,2,3]
+
+// We can do...
+const fromResult = Array.from(new Set(fromNums));
+
+console.log(fromResult);
+
+// ARRAY isArray
+// checks if the passed value is an array
+// NOTE that the string is NOT an array
+const nameArray = ['kev', 'kevinsu'];
+const stringArray = 'pepepepepe';
+const numArray = 99;
+
+// Example
+console.log(Array.isArray(stringArray));
+
+// ARRAY flat
+// creates new array with new sub array elements concatenated
+// NOTE this does not change the original ARR
+const flatArr = [1,[2,[3,[4]]]];
+
+const flatRes = flatArr.flat();
+
+// the flat method will remove ONE array if no depth provided
+// will be [1,2,[3,[4]]]
+console.log(flatRes);
+
+// NOW it will be [1,2,3,4]
+const flatRes2 = flatArr.flat(3);
+console.log(flatRes2);
+
+// If we do arr.flat(Infinity) it will 
+// work for every array no matter how many nested arr
 
 function App() {
 
