@@ -279,6 +279,43 @@ const sortProducts = [
 // For descending order: b.price - a.price
 console.log(sortProducts.sort((a,b) =>  a.price - b.price));
 
+// ARRAY concat
+// MERGES two arrays into one which will be returned
+const a = [1,2,3]
+const b = [4,5,6]
+const c = a.concat(b);
+
+// Will be [1,2,3,4,5,6]
+// CONCAT wont change array used e.g. a and b
+console.log(c);
+
+// We can concat multiple 
+// Result: [1,2,3,1,2,3,4,5,6]
+const d = a.concat(a,b);
+console.log(d);
+
+// If we just call a.concat() with nothing
+// We get shallow copy of a
+
+// We can also concat single things
+// Result: [1,2,3,7,8,9]
+const e = a.concat(7,8,9);
+console.log(e);
+
+// ARRAY FILL
+// changes all elements inside the array with the provided value
+// MODIFIES THE ARRAY AND CAN RETURN IT
+const fillNums = [1,2,3,4,5]
+
+// will be [0,0,0,0,0]
+console.log(fillNums.fill(0));
+
+// we can specify starting index and ending index
+// this will only fill numbers between 1 and UPTO (NOT INCLUDING 4)
+console.log(fillNums.fill(1,1,4));
+
+// Example filling array with array index
+console.log(Array(5).fill(0).map((_, index) => index+1));
 
 function App() {
 
